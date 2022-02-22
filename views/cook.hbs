@@ -1,0 +1,31 @@
+
+{{#each cooks}}
+<div style="margin-bottom: 70px">
+  <img style="width: 600px; height: 500px; margin-left: 40px; margin-top: 70px; border-radius: 20px; box-shadow: 4px 4px 4px #51382a" src="{{this.image}}" alt="picture">
+</div>
+<div style="margin-left: 50px; margin-top: 40px; width: 1100px;">
+<h1 class="nameDish" style="font-size: 37px; color: #b4856e; font-weight: 900; text-shadow: 1px 1px 1px #51382a;">{{this.name}}</h3><br>
+<div>
+<p style="font-size: 28px; color: #b06d81; font-weight: 600; text-shadow: 2px 2px 2px #fde6b6; margin-top: -2px">Ингредиенты: </p>
+<p style="font-size: 22px;">{{this.ingredients}}</p>
+</div>
+<div>
+<p style="font-size: 28px; color: #b06d81; font-weight: 600; text-shadow: 2px 2px 2px #fde6b6">Способ приготовления: </p>
+<p style="font-size: 22px;">{{this.instructions}}</p>
+</div>
+<br>
+<div>
+<p style="font-size: 28px; margin-top: -10px; color: #b06d81; font-weight: 600; text-shadow: 2px 2px 2px #fde6b6">Время приготовления: </p>
+<p style="font-size: 18px; line-height: 19px; margin-bottom: -20px">preparation time: {{this.time.prepration_time}}</p><br>
+<p style="font-size: 18px; line-height: 19px; margin-bottom: -20px">cooking time: {{this.time.cooking_time}}</p><br>
+<p style="font-size: 18px; line-height: 19px; margin-bottom: -20px">additional time: {{this.time.additional_time}}</p><br>
+<p style="font-size: 22px; line-height: 22px;">total: {{this.time.total}}</p></div>
+{{#if this.entries}}
+<p style="font-size: 28px; margin-top: 40px; margin-left: 0px; margin-bottom: 0px; color: #b06d81; font-weight: 600; text-shadow: 2px 2px 2px #fde6b6">Витамины и питательные вещества: </p><br>
+{{/if}}
+{{#each this.entries}}
+<p style="font-size: 16px; display: inline;"> {{this}}</p>
+{{/each}}
+</div>
+<hr style="background: #b4856e; height: 3px; width: 70%; margin-top: 70px">
+{{/each}}
